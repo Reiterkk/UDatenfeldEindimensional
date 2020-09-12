@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.CmdMinima = new System.Windows.Forms.Button();
-            this.LstZahlen = new System.Windows.Forms.ListBox();
             this.LblMinima = new System.Windows.Forms.Label();
+            this.LstZahlen = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // CmdMinima
@@ -41,16 +41,7 @@
             this.CmdMinima.TabIndex = 0;
             this.CmdMinima.Text = "Minima";
             this.CmdMinima.UseVisualStyleBackColor = true;
-            // 
-            // LstZahlen
-            // 
-            this.LstZahlen.Enabled = false;
-            this.LstZahlen.FormattingEnabled = true;
-            this.LstZahlen.ItemHeight = 15;
-            this.LstZahlen.Location = new System.Drawing.Point(25, 89);
-            this.LstZahlen.Name = "LstZahlen";
-            this.LstZahlen.Size = new System.Drawing.Size(120, 229);
-            this.LstZahlen.TabIndex = 1;
+            this.CmdMinima.Click += new System.EventHandler(this.CmdMinima_Click);
             // 
             // LblMinima
             // 
@@ -61,17 +52,25 @@
             this.LblMinima.TabIndex = 2;
             this.LblMinima.Text = "Minimum:";
             // 
+            // LstZahlen
+            // 
+            this.LstZahlen.FormattingEnabled = true;
+            this.LstZahlen.ItemHeight = 15;
+            this.LstZahlen.Location = new System.Drawing.Point(32, 89);
+            this.LstZahlen.Name = "LstZahlen";
+            this.LstZahlen.Size = new System.Drawing.Size(120, 229);
+            this.LstZahlen.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.LblMinima);
             this.Controls.Add(this.LstZahlen);
+            this.Controls.Add(this.LblMinima);
             this.Controls.Add(this.CmdMinima);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,8 +79,8 @@
         #endregion
 
         private System.Windows.Forms.Button CmdMinima;
-        private System.Windows.Forms.ListBox LstZahlen;
         private System.Windows.Forms.Label LblMinima;
+        private System.Windows.Forms.ListBox LstZahlen;
     }
 }
 

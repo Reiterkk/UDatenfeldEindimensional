@@ -18,13 +18,30 @@ namespace UDatenfeldEindimensional
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void CmdMinima_Click(object sender, EventArgs e)
         {
+            int minimum;
             int[] zahlen = new int[10];
+            LstZahlen.Items.Clear();
             for (int i = 0; i < zahlen.Length; i++)
             {
                 zahlen[i] = r.Next(20, 31);
                 LstZahlen.Items.Add(zahlen[i]);
+            }
+
+            minimum = zahlen[0];
+            foreach (int zahl in zahlen)
+            {
+                minimum = zahl < minimum ? zahl : minimum;
+            }
+
+            LblMinima.Text = "Minimum: " + minimum + "\n";
+            for (int i = 0; i < zahlen.Length; i++)
+            {
+                if (zahlen[i] == minimum)
+                {
+                    LblMinima.Text += "an Position " + i + "\n";
+                }
             }
         }
     }
